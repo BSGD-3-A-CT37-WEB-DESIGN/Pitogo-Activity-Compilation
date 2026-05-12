@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lunaris Activities Compilation</title>
+
+<link rel="icon" type="image/png"
+href="https://i.pinimg.com/736x/81/0f/a5/810fa508e0a00d92ff045e2c4e3fa20b.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:"Inter",sans-serif;
+
+    min-height:100vh;
+
+    background:#050816;
+
+    color:white;
+
+    overflow-x:hidden;
+}
+
+/* BACKGROUND */
+
+.bg{
+    position:fixed;
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    z-index:-3;
+}
+
+/* DARK OVERLAY */
+
+.overlay{
+    position:fixed;
+    inset:0;
+
+    background:
+    linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.35),
+        rgba(0,0,0,0.78)
+    );
+
+    z-index:-2;
+}
+
+/* STARS */
+
+.stars{
+    position:fixed;
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+}
+
+.stars span{
+    position:absolute;
+
+    width:2px;
+    height:2px;
+
+    background:white;
+
+    border-radius:50%;
+
+    opacity:0.7;
+
+    animation:blink 4s infinite ease-in-out;
+}
+
+@keyframes blink{
+
+    0%,100%{
+        opacity:0.2;
+    }
+
+    50%{
+        opacity:1;
+    }
+
+}
+
+/* MAIN */
+
+.container{
+    width:min(1200px,92%);
+    margin:auto;
+
+    padding:70px 0;
+}
+
+/* HEADER */
+
+.header{
+    text-align:center;
+
+    margin-bottom:60px;
+
+    animation:fadeUp 1s ease;
+}
+
+.header h1{
+    font-size:clamp(2.5rem,6vw,5rem);
+
+    margin-bottom:18px;
+
+    letter-spacing:-2px;
+}
+
+.header p{
+    color:rgba(255,255,255,0.72);
+
+    max-width:700px;
+
+    margin:auto;
+
+    line-height:1.8;
+}
+
+/* GRID */
+
+.grid{
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+
+    gap:28px;
+}
+
+/* CARD */
+
+.card{
+    background:
+    rgba(10,15,28,0.38);
+
+    border:
+    1px solid rgba(255,255,255,0.08);
+
+    border-radius:28px;
+
+    padding:28px;
+
+    backdrop-filter:blur(16px);
+
+    transition:0.35s;
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,0.28);
+}
+
+.card:hover{
+    transform:translateY(-6px);
+
+    background:
+    rgba(15,20,38,0.52);
+}
+
+/* ACTIVITY NUMBER */
+
+.activity-number{
+    font-size:0.9rem;
+
+    color:#b8c7ff;
+
+    margin-bottom:14px;
+
+    letter-spacing:1px;
+}
+
+/* TITLE */
+
+.card h2{
+    font-size:1.5rem;
+
+    margin-bottom:14px;
+}
+
+/* DESCRIPTION */
+
+.card p{
+    color:rgba(255,255,255,0.70);
+
+    line-height:1.8;
+
+    margin-bottom:24px;
+}
+
+/* BUTTON */
+
+.open-btn{
+    display:inline-block;
+
+    text-decoration:none;
+
+    padding:14px 24px;
+
+    border-radius:18px;
+
+    background:
+    rgba(255,255,255,0.10);
+
+    border:
+    1px solid rgba(255,255,255,0.12);
+
+    color:white;
+
+    transition:0.3s;
+}
+
+.open-btn:hover{
+    background:
+    rgba(255,255,255,0.18);
+
+    transform:translateY(-2px);
+}
+
+/* FOOTER */
+
+.footer{
+    text-align:center;
+
+    margin-top:70px;
+
+    color:rgba(255,255,255,0.55);
+
+    font-size:0.95rem;
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- GIF BACKGROUND -->
+<img
+src="https://i.pinimg.com/originals/e5/40/08/e54008fec896ec085da559cf537d6f32.gif"
+class="bg"
+alt="Background"
+>
+
+<!-- OVERLAY -->
+<div class="overlay"></div>
+
+<!-- STARS -->
+<div class="stars">
+
+<span style="top:10%;left:20%;animation-delay:0s;"></span>
+<span style="top:18%;left:70%;animation-delay:1s;"></span>
+<span style="top:35%;left:55%;animation-delay:2s;"></span>
+<span style="top:70%;left:80%;animation-delay:1.5s;"></span>
+<span style="top:82%;left:18%;animation-delay:2.5s;"></span>
+<span style="top:48%;left:92%;animation-delay:3s;"></span>
+
+</div>
+
+<!-- MAIN -->
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+
+        <h1>
+            Lunaris Activities Compilation
+        </h1>
+
+        <p>
+            A compilation of all HTML and CSS activities
+            deployed using GitHub Repository and GitHub Pages.
+        </p>
+
+    </div>
+
+<!-- GRID -->
+<div class="grid">
+
+    <!-- ACT 2 -->
+    <div class="card">
+
+        <div class="activity-number">
+            Activity #2
+        </div>
+
+        <h2>
+            CSS Basic
+        </h2>
+
+        <p>
+            Basic button styling inspired by famous websites
+            such as Uber, Amazon, GitHub, Bootstrap,
+            and LinkedIn.
+        </p>
+
+        <a href="act2.html" class="open-btn">
+            Open Activity
+        </a>
+
+    </div>
+
+    <!-- ACT 3 -->
+    <div class="card">
+
+        <div class="activity-number">
+            Activity #3
+        </div>
+
+        <h2>
+            CSS Hover, Shadow and Transition
+        </h2>
+
+        <p>
+            Interactive hover animations, button shadows,
+            transitions, and visual effects using CSS.
+        </p>
+
+        <a href="act3.html" class="open-btn">
+            Open Activity
+        </a>
+
+    </div>
+
+    <!-- ACT 4 -->
+    <div class="card">
+
+        <div class="activity-number">
+            Activity #4
+        </div>
+
+        <h2>
+            HTML Image, Favicon and Audio
+        </h2>
+
+        <p>
+            A relaxing multimedia webpage using GIF visuals,
+            favicon integration, and embedded music player.
+        </p>
+
+        <a href="act4.html" class="open-btn">
+            Open Activity
+        </a>
+
+    </div>
+
+    <!-- ACT 5 -->
+    <div class="card">
+
+        <div class="activity-number">
+            Activity #5
+        </div>
+
+        <h2>
+            Hero Page
+        </h2>
+
+        <p>
+            A cinematic fullscreen hero landing page
+            with animated backgrounds and glassmorphism UI.
+        </p>
+
+        <a href="act5.html" class="open-btn">
+            Open Activity
+        </a>
+
+    </div>
+
+    <!-- ACT 6 -->
+    <div class="card">
+
+        <div class="activity-number">
+            Activity #6
+        </div>
+
+        <h2>
+            Login Page
+        </h2>
+
+        <p>
+            A modern aesthetic login interface with
+            animated GIF backgrounds and smooth UI styling.
+        </p>
+
+        <a href="act6.html" class="open-btn">
+            Open Activity
+        </a>
+
+    </div>
+
+</div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+
+        Developed by Lunaris • GitHub Pages Compilation Project
+
+    </div>
+
+</div>
+
+</body>
+</html>

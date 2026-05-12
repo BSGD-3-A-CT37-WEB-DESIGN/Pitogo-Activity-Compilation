@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ACTIVITY # 6: LOGIN PAGE</title>
+
+<link rel="icon" type="image/png" href="https://i.pinimg.com/736x/81/0f/a5/810fa508e0a00d92ff045e2c4e3fa20b.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:"Inter",sans-serif;
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
+
+    color:white;
+
+    background:#000;
+}
+
+/* GIF BACKGROUND */
+
+.bg-gif{
+    position:fixed;
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    z-index:-3;
+}
+
+/* OVERLAY */
+
+.overlay{
+    position:fixed;
+    inset:0;
+
+    background:
+    linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.35),
+        rgba(0,0,0,0.65)
+    );
+
+    z-index:-2;
+}
+
+/* LOGIN CONTAINER */
+
+.login-box{
+    width:min(420px,92%);
+
+    background:rgba(10,15,28,0.35);
+
+    border:1px solid rgba(255,255,255,0.10);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:30px;
+
+    padding:42px 34px;
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,0.45);
+
+    animation:fadeUp 1s ease;
+}
+
+/* LOGO */
+
+.logo{
+    text-align:center;
+
+    font-size:2rem;
+
+    font-weight:700;
+
+    letter-spacing:3px;
+
+    margin-bottom:12px;
+
+    color:#ffffff;
+
+    text-shadow:
+    0 0 20px rgba(255,255,255,0.15);
+}
+
+/* SUBTITLE */
+
+.subtitle{
+    text-align:center;
+
+    color:rgba(255,255,255,0.72);
+
+    line-height:1.8;
+
+    font-size:0.95rem;
+
+    margin-bottom:34px;
+}
+
+/* INPUT GROUP */
+
+.input-group{
+    margin-bottom:22px;
+}
+
+.input-label{
+    display:block;
+
+    margin-bottom:10px;
+
+    font-size:0.92rem;
+
+    color:#dce3ff;
+}
+
+/* INPUT */
+
+.input-field{
+    width:100%;
+
+    padding:16px 18px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,0.08);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    color:white;
+
+    font-size:0.95rem;
+
+    transition:0.3s;
+
+    backdrop-filter:blur(10px);
+}
+
+.input-field::placeholder{
+    color:rgba(255,255,255,0.45);
+}
+
+.input-field:focus{
+    border:1px solid rgba(180,200,255,0.45);
+
+    background:rgba(255,255,255,0.12);
+}
+
+/* OPTIONS */
+
+.options{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:28px;
+
+    font-size:0.9rem;
+}
+
+.options label{
+    color:rgba(255,255,255,0.7);
+}
+
+.options a{
+    color:#c7d5ff;
+
+    text-decoration:none;
+}
+
+.options a:hover{
+    text-decoration:underline;
+}
+
+/* BUTTON */
+
+.login-btn{
+    width:100%;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,0.14);
+
+    border:1px solid rgba(255,255,255,0.12);
+
+    color:white;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:0.35s;
+
+    backdrop-filter:blur(12px);
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.25);
+}
+
+.login-btn:hover{
+    transform:translateY(-3px);
+
+    background:rgba(255,255,255,0.20);
+}
+
+/* FOOTER */
+
+.footer{
+    text-align:center;
+
+    margin-top:26px;
+
+    color:rgba(255,255,255,0.62);
+
+    font-size:0.92rem;
+}
+
+.footer a{
+    color:#d6e1ff;
+
+    text-decoration:none;
+}
+
+.footer a:hover{
+    text-decoration:underline;
+}
+
+/* STARS */
+
+.stars{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+}
+
+.stars span{
+    position:absolute;
+
+    width:2px;
+    height:2px;
+
+    background:white;
+
+    border-radius:50%;
+
+    opacity:0.7;
+
+    animation:blink 4s infinite ease-in-out;
+}
+
+@keyframes blink{
+
+    0%,100%{
+        opacity:0.2;
+    }
+
+    50%{
+        opacity:1;
+    }
+
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* MOBILE */
+
+@media(max-width:500px){
+
+    .login-box{
+        padding:36px 24px;
+    }
+
+    .logo{
+        font-size:1.7rem;
+    }
+
+}
+
+</style>
+</head>
+<body>
+
+<!-- GIF BACKGROUND -->
+<img
+    src="https://i.pinimg.com/originals/af/50/b3/af50b3509ccaa3273ff360ad41acd66d.gif"
+    class="bg-gif"
+    alt="Background GIF"
+>
+
+<!-- OVERLAY -->
+<div class="overlay"></div>
+
+<!-- STARS -->
+<div class="stars">
+    <span style="top:10%;left:20%;animation-delay:0s;"></span>
+    <span style="top:18%;left:70%;animation-delay:1s;"></span>
+    <span style="top:35%;left:55%;animation-delay:2s;"></span>
+    <span style="top:70%;left:80%;animation-delay:1.5s;"></span>
+    <span style="top:82%;left:18%;animation-delay:2.5s;"></span>
+    <span style="top:48%;left:92%;animation-delay:3s;"></span>
+</div>
+
+<!-- LOGIN BOX -->
+<div class="login-box">
+
+    <div class="logo">
+        Lunaris
+    </div>
+
+    <p class="subtitle">
+        Enter your peaceful digital space and continue your late-night journey.
+    </p>
+
+    <!-- EMAIL -->
+    <div class="input-group">
+
+        <label class="input-label">
+            Email
+        </label>
+
+        <input
+            type="email"
+            class="input-field"
+            placeholder="Enter your email"
+        >
+
+    </div>
+
+    <!-- PASSWORD -->
+    <div class="input-group">
+
+        <label class="input-label">
+            Password
+        </label>
+
+        <input
+            type="password"
+            class="input-field"
+            placeholder="Enter your password"
+        >
+
+    </div>
+
+    <!-- OPTIONS -->
+    <div class="options">
+
+        <label>
+            <input type="checkbox">
+            Remember me
+        </label>
+
+        <a href="#">
+            Forgot Password?
+        </a>
+
+    </div>
+
+    <!-- BUTTON -->
+    <button class="login-btn">
+        Login
+    </button>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        Don't have an account?
+        <a href="#">Create One</a>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,206 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ACTIVITY # 4: HTML IMAGE, FAVICON AND AUDIO</title>
+<title>ACTIVITY # 5: HERO PAGE</title>
 
-<!-- Favicon -->
-<link rel="icon" type="image/jpg" href="https://i.pinimg.com/736x/81/0f/a5/810fa508e0a00d92ff045e2c4e3fa20b.jpg">
+<link rel="icon" type="image/png" href="https://i.pinimg.com/736x/81/0f/a5/810fa508e0a00d92ff045e2c4e3fa20b.jpg">
 
-<!-- Google Font -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+<!-- External CSS -->
+<link rel="stylesheet" href="style.css">
 
-body{
-    font-family:"Inter",sans-serif;
-    min-height:100vh;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    padding:30px;
-
-    overflow-x:hidden;
-
-    background:
-    radial-gradient(circle at top, rgba(82, 111, 255, 0.15), transparent 30%),
-    linear-gradient(180deg,#0b1025 0%,#070b18 100%);
-
-    color:white;
-
-    position:relative;
-}
-
-/* Floating glow */
-
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-
-    background:
-    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.08), transparent 25%),
-    radial-gradient(circle at 80% 10%, rgba(112,147,255,0.10), transparent 30%),
-    radial-gradient(circle at 50% 80%, rgba(255,255,255,0.04), transparent 35%);
-
-    pointer-events:none;
-}
-
-.container{
-    width:min(950px,100%);
-    position:relative;
-    z-index:2;
-
-    background:rgba(8,12,28,0.72);
-
-    border:1px solid rgba(255,255,255,0.08);
-
-    border-radius:32px;
-
-    padding:28px;
-
-    backdrop-filter:blur(18px);
-
-    box-shadow:
-    0 20px 70px rgba(0,0,0,0.45);
-}
-
-.image-frame{
-    width:100%;
-
-    overflow:hidden;
-
-    border-radius:26px;
-
-    position:relative;
-
-    box-shadow:
-    0 20px 60px rgba(0,0,0,0.45);
-
-    border:1px solid rgba(255,255,255,0.08);
-}
-
-.image-frame::after{
-    content:"";
-    position:absolute;
-    inset:0;
-
-    background:linear-gradient(
-        to top,
-        rgba(0,0,0,0.28),
-        transparent 30%
-    );
-
-    pointer-events:none;
-}
-
-.relax-img{
-    width:100%;
-    display:block;
-
-    object-fit:cover;
-
-    aspect-ratio:16/9;
-}
-
-.music-box{
-    width:100%;
-
-    margin-top:24px;
-
-    background:rgba(255,255,255,0.04);
-
-    border-radius:22px;
-
-    padding:16px;
-
-    border:1px solid rgba(255,255,255,0.08);
-
-    box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,0.02);
-}
-
-iframe{
-    border-radius:16px;
-}
-
-/* Stars */
-
-.stars{
-    position:fixed;
-    inset:0;
-    overflow:hidden;
-    pointer-events:none;
-}
-
-.stars span{
-    position:absolute;
-    width:2px;
-    height:2px;
-    background:white;
-    border-radius:50%;
-    opacity:0.7;
-    animation:blink 4s infinite ease-in-out;
-}
-
-@keyframes blink{
-    0%,100%{
-        opacity:0.2;
-    }
-    50%{
-        opacity:1;
-    }
-}
-
-</style>
 </head>
 
 <body>
 
-<!-- Decorative stars -->
+<!-- FULL GIF BACKGROUND -->
+<img
+    src="https://i.pinimg.com/originals/e5/40/08/e54008fec896ec085da559cf537d6f32.gif"
+    class="hero-bg"
+    alt="Lofi Background"
+>
+
+<!-- OVERLAY -->
+<div class="overlay"></div>
+
+<!-- STARS -->
 <div class="stars">
-    <span style="top:10%; left:20%; animation-delay:0s;"></span>
-    <span style="top:30%; left:70%; animation-delay:1s;"></span>
-    <span style="top:50%; left:40%; animation-delay:2s;"></span>
-    <span style="top:15%; left:80%; animation-delay:3s;"></span>
-    <span style="top:75%; left:60%; animation-delay:1.5s;"></span>
-    <span style="top:65%; left:15%; animation-delay:2.5s;"></span>
+    <span style="top:10%;left:20%;animation-delay:0s;"></span>
+    <span style="top:15%;left:70%;animation-delay:1s;"></span>
+    <span style="top:30%;left:50%;animation-delay:2s;"></span>
+    <span style="top:70%;left:80%;animation-delay:1.5s;"></span>
+    <span style="top:80%;left:15%;animation-delay:2.5s;"></span>
+    <span style="top:45%;left:90%;animation-delay:3s;"></span>
 </div>
 
-<section class="container">
+<!-- NAVBAR -->
+<nav class="navbar">
 
-    <!-- GIF IMAGE -->
-    <figure class="image-frame">
-        <img
-            src="https://i.pinimg.com/originals/16/5e/a1/165ea1fd36de790d7fd64b5a1fd8e5bb.gif"
-            alt="Relaxing Pixel Night"
-            class="relax-img"
-        >
-    </figure>
+    <div class="logo">
+        Lunaris
+    </div>
 
-    <!-- MUSIC PLAYER -->
-    <div class="music-box">
+    <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Playlist</a>
+        <a href="#">Gallery</a>
+        <a href="#">About</a>
+    </div>
 
-        <iframe
-            width="100%"
-            height="166"
-            scrolling="no"
-            frameborder="no"
-            allow="autoplay"
-            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/softy_soo/sets/sometimes-i-wait-for-you&color=%230b1025&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false">
-        </iframe>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="tag">
+            Calm • Cozy • Atmospheric
+        </div>
+
+        <h1 class="hero-title">
+            Escape Into <span>Lofi Nights</span>
+        </h1>
+
+        <p class="hero-description">
+            A quiet digital atmosphere filled with distant city lights,
+            slow rain, peaceful music, and late-night energy made for
+            studying, relaxing, creating, or simply drifting through the night.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#" class="btn btn-primary">
+                Start Listening
+            </a>
+
+            <a href="#" class="btn btn-secondary">
+                Explore Vibes
+            </a>
+
+        </div>
 
     </div>
 
